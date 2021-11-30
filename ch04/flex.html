@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <!-- reload automatically -->
+    <meta http-equiv="refresh" content="3" >
+    <title>Flex</title>
+    <style>
+      body {
+        background-color: rgb(44,44,44);
+        color: white;
+      }
+
+      .center-me {
+        background-color: indigo;
+        color: #ebebeb;
+        font-family: 'Oswald', sans-serif;
+        font-size: 2rem;
+        text-transform: uppercase;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .menu-wrap {
+        background-color: indigo;
+        font-family: 'Oswald', sans-serif;
+        font-size: 1rem;
+        min-height: 2.75rem;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 0 1rem;
+      }
+
+      .last-item,
+      .list-item {
+        color: #ebebeb;
+        text-decoration: none;
+      }
+      .list-item {
+        margin-right: 1rem;
+      }
+      .last-item {
+        margin-right: auto;
+      }
+
+      .inline-flex {
+        display: inline-flex;
+        align-items: center;
+        height: 120px;
+        padding: 0 4px;
+        background-color: indigo;
+        text-decoration: none;
+        color: #ddd;
+        border-radius: 10px;
+      }
+
+      .flex-wrapper {
+        background-color: indigo;
+        display: flex;
+        height: 200px;
+        width: 100%;
+        justify-content: space-around;
+      }
+
+      .flex-item {
+        border: 2px solid #ebebeb;
+        background-color: #34005b;
+        display: flex;
+        justify-content: center;
+        height: 100px;
+        flex: 1;
+      }
+      .align-self {
+        align-self: flex-end;
+        flex-grow: 2;
+        flex-shrink: 0;
+        flex-basis: 50%;
+      }
+
+      .flex-item-type2 {
+        border: 1px solid #ebebeb;
+        background-color: #34005b;
+        display: flex;
+        height: 100px;
+      }
+      .flex-one {
+        flex-grow: 1.5;
+        flex-shrink: 0;
+        flex-basis: auto;
+      }
+      .flex-two,
+      .flex-three {
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: auto;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="center-me">
+      hello I'm centered
+    </div>
+
+    <div class="menu-wrap">
+      <a href="#" class="list-item">Home</a>
+      <a href="#" class="list-item">About</a>
+      <a href="#" class="list-item">Products</a>
+      <a href="#" class="list-item">Policy</a>
+      <a href="#" class="last-item">Contact</a>
+    </div>
+
+    <p>Here is a sentence with a <a href="#" class="inline-flex">inline-flex link</a>.</p>
+
+    <div class="flex-wrapper">
+      <div class="flex-item">I am content in the inner flexbox number 1.</div>
+      <div class="flex-item align-self">I am self aligned</div>
+      <div class="flex-item">I am content in the inner flexbox number 3.</div>
+    </div>
+
+    <br/>
+
+    <div class="flex-wrapper">
+      <div class="flex-item-type2 flex-one">content of inner flexbox 1</div>
+      <div class="flex-item-type2 flex-two">content of inner flexbox 2</div>
+      <div class="flex-item-type2 flex-three">content of inner flexbox 3</div>
+    </div>
+  </body>
+</html>

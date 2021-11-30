@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="http://fonts.googleapis.com/css?family=Oswald:700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta http-equiv="refresh" content="3" >
+    <meta charset="utf-8" />
+    <title>selector</title>
+    <meta name="viewport" content="width=device-width" />
+  <style>
+    body {
+      background-color: #222;
+      color: #ccc;
+    }
+    span:not(.span-class) {
+      height: 2rem;
+      width: 2rem;
+      background-color: blue;
+      display: inline-block;
+    }
+    /*
+    span:not(.span-class):nth-child(2n + 3) {
+      background-color: #f90;
+      border-radius: 50%;
+    }
+    */
+    span:not(.span-class):nth-last-child(-n+3) {
+      background-color: orange;
+      border-radius: 50%;
+    }
+
+    .span-class{
+      height: 2rem;
+      width: 2rem;
+      display: inline-block;
+    }
+
+    span.span-class {
+      background-color: green;
+    }
+
+    div.span-class {
+      background-color: teal;
+    }
+
+    .span-class:nth-of-type(-2n+3) {
+      background-color: red;
+      border-radius: 50%;
+    }
+  </style>
+  </head>
+  <body>
+    <div>
+      <!-- NOTE: if these span are not wrapped in a div, then last-child will pick elements like the br or the next div and start counting from there.... -->
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <br/>
+
+    <div>
+      <span class="span-class"></span>
+      <span class="span-class"></span>
+      <span class="span-class"></span>
+      <span class="span-class"></span>
+      <span class="span-class"></span>
+      <div  class="span-class"></div>
+      <div  class="span-class"></div>
+      <div  class="span-class"></div>
+      <div  class="span-class"></div>
+      <div  class="span-class"></div>
+    </div>
+
+  </body>
+</html>

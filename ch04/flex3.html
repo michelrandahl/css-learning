@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- reload automatically -->
+    <meta http-equiv="refresh" content="3" >
+    <meta name="viewport" content="width=device-width">
+    <title>Flex3</title>
+    <style>
+      body {
+        background-color: #222;
+        color: #ccc;
+      }
+      .flex-wrapper {
+        background-color: indigo;
+        display: flex;
+        flex-direction: column;
+      }
+      .flex-item {
+        display: flex;
+        align-items: center;
+        min-height: 6.25rem;
+        padding: 1rem;
+      }
+      .flex-header {
+        background-color: #105b63;
+      }
+      .flex-content {
+        background-color: #fffad5;
+        color: #333;
+        order: 0;
+      }
+      .flex-side-one {
+        background-color: #ffd34e;
+        color: #333;
+        order: 2;
+      }
+      .flex-side-two {
+        background-color: #db9e36;
+        order: 3;
+      }
+      .flex-footer {
+        background-color: #bd4932;
+        order: 4;
+      }
+
+      @media (min-width: 30rem) {
+        .flex-wrapper {
+          flex-flow: row wrap;
+        }
+        .flex-header {
+          width: 100%;
+        }
+        .flex-content {
+          flex: 1 0 auto;
+          order: 3;
+        }
+        .flex-side-one {
+          width: 150px;
+          order: 2;
+        }
+        .flex-side-two {
+          width: 150px;
+          order: 4;
+        }
+        .flex-footer {
+          width: 100%;
+          order: 5;
+        }
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 70%;
+        background-color: #bbb;
+        align-items: center;
+        border: 5px solid #1c1;
+        justify-content: space-around;
+        margin: auto;
+      }
+      .items {
+        color: #111;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+        flex: 0 0 25%;
+        height: 40px;
+        border: 2px dashed #545454;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-wrapper">
+      <div class="flex-item flex-header">content in header</div>
+      <div class="flex-item flex-side-one">content in one</div>
+      <div class="flex-item flex-content">main content</div>
+      <div class="flex-item flex-side-two">content in two</div>
+      <div class="flex-item flex-footer">content in footer</div>
+    </div>
+
+    <div class="container">
+      <div class="items">item 1</div>
+      <div class="items">item 2</div>
+      <div class="items">item 3</div>
+      <div class="items">item 4</div>
+      <div class="items">item 5</div>
+    </div>
+
+    <!-- https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images -->
+    <img src="tiny.png" srcset="small.png 1280w, big.png 2560w" alt="something funky.."/>
+
+    <br/>
+
+    <!-- this way is the best! -->
+    <picture>
+      <source media="(min-width: 1600px)" srcset="big.png">
+      <source media="(min-width: 320px)" srcset="small.png">
+      <img src="tiny.png" alt="something funky">
+    </picture>
+  </body>
+</html>
